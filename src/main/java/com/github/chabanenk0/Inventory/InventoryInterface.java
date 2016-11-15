@@ -1,5 +1,6 @@
 package com.github.chabanenk0.Inventory;
 
+import com.github.chabanenk0.Exception.KeyNotFoundException;
 import com.github.chabanenk0.Product.ProductsBatch;
 
 import java.util.Collection;
@@ -14,7 +15,7 @@ interface InventoryInterface
      * Add a new product batch
      * @param product
      */
-    public void add(ProductsBatch product);
+    public void add(ProductsBatch product) throws Exception;
 
     /**
      * Remove product batch by id
@@ -74,7 +75,7 @@ interface InventoryInterface
      * @param typeCode
      * @return
      */
-    public long countProductsByTypeCode(long typeCode);
+    public long countProductsByTypeCode(long typeCode) throws KeyNotFoundException;
     /**
      * Calculate the total price of products with certain typeCode
      * @param typeCode
